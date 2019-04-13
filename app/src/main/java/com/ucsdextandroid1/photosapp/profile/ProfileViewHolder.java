@@ -60,7 +60,8 @@ public class ProfileViewHolder extends RecyclerView.ViewHolder {
     public void bind(Profile profile) {
         currentProfile = profile;
 
-        Picasso.get().load(profile.getProfileImageUrl()).into(iconImage);
+        Picasso.get().load(profile.getProfileImageUrl()).placeholder(android.R.color.holo_red_light).into(iconImage);
+
         nameView.setText(profile.getFullName());
         postsCountView.setText(String.valueOf(profile.getPostCount()));
         followersCountView.setText(String.valueOf(profile.getFollowersCount()));
